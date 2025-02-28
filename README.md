@@ -27,15 +27,15 @@ Ensure you have the following installed on your system:
 
 #### a. Create and Activate a Virtual Environment
 ```yaml
-python -m venv data_env
+python -m venv <my_env>
 ```
 For Windows:
 ```yaml
-.\data_env\Scripts\activate
+.\<my_env>\Scripts\activate
 ```
 For macOS/Linux:
 ```yaml
-source data_env/bin/activate
+source <my_env>/bin/activate
 ```
 
 #### b. Upgrade pip and Install Dependencies
@@ -50,11 +50,11 @@ pip install --upgrade sqlalchemy pymysql fastapi uvicorn pandas
 Ensure you have MySQL running and update db.py with your database credentials:
 
 ```yaml
-DB_USER = "root"
-DB_PASSWORD = "password"
+DB_USER = "YOUR_USER_NAME"
+DB_PASSWORD = "YOUR_PASSWORD"
 DB_HOST = "localhost"
 DB_PORT = "3306"
-DB_NAME = "inventory"
+DB_NAME = "YOUR_DB_NAME"
 ```
 
 ## Running the Backend
@@ -167,6 +167,7 @@ This script:
 
 ### 1. Data after ETL 
 This screenshot displays the data after being processed by the backend. Raw sales data is cleaned, transformed, and stored in a MySQL database for visualization.
+
 ![MySQL](https://github.com/user-attachments/assets/79bdfd4a-c6e9-45d4-83da-f8f6af3c67c5)
 ### 2. Bar Chart 
 This visualization represents sales revenue by region. It allows for better insights into sales performance across different areas.
