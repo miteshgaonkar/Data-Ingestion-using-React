@@ -1,0 +1,26 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/sales-dashboard/node_modules
+/sales-dashboard/.pnp
+/sales-dashboard/.pnp.js
+
+# testing
+/sales-dashboard/coverage
+
+# production
+/sales-dashboard/build
+
+# misc
+/sales-dashboard/.DS_Store
+/sales-dashboard/.env.local
+/sales-dashboard/.env.development.local
+/sales-dashboard/.env.test.local
+/sales-dashboard/.env.production.local
+
+/sales-dashboard/npm-debug.log*
+/sales-dashboard/yarn-debug.log*
+/sales-dashboard/yarn-error.log*
+/sales-dashboard/temp.txt
+
+/__pycache__
