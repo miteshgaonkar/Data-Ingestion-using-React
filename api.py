@@ -25,7 +25,6 @@ def get_sale_data():
 
     df['revenue'] = df['revenue'] / scale_factor
     df['revenue'] = df['revenue'].apply(lambda x: f"{x:.2f} {scale_label}" if scale_label else f"{x:.2f}")
-    print(df)
     return df.to_dict(orient="records")
 
 
@@ -43,5 +42,4 @@ def get_scale_value(max_value):
         scale_factor = 1  
         scale_label = ""
 
-    print(f"Revenue scaled by {scale_factor} ({scale_label})")
     return scale_factor, scale_label
