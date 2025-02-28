@@ -9,8 +9,20 @@ const SalesDashboard = () => {
   useEffect(() => {
     fetch("http://localhost:8000/sales_data")
       .then((response) => response.json())
-      .then((data) => setSalesData(data));
+      .then((data) => {
+        const formattedData = data.map(item => {        
+          const numericRevenue = parseFloat(item.revenue);
+          return {
+            ...item,
+            revenueNumeric: numericRevenue,  
+            revenueFormatted: item.revenue   
+          };
+        });
+        setSalesData(formattedData);
+        console.log(formattedData)
+      });
   }, []);
+  
   return (
     <div class = "Chart">
       <h2 class = "App">Sales Performance Dashboard</h2>
@@ -18,8 +30,8 @@ const SalesDashboard = () => {
         <CartesianGrid strokeDasharray="4 4" />
         <XAxis dataKey="region" />
         <YAxis />
-        <Tooltip />
-        <Bar dataKey="revenue" fill="#880808" />
+        <Tooltip formatter={(value, name, props) => [props.payload.revenueFormatted, "Revenue"]} />
+        <Bar dataKey="revenueNumeric" fill="#880808" />
       </BarChart>
     </div>
   );
