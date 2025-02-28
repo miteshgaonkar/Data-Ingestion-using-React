@@ -21,7 +21,7 @@ Ensure you have the following installed on your system:
 ### 1. Clone the Repository
 ```yaml
  git clone <repository-url>
- cd sales-dashboard
+ cd Data-Ingestion-using-React
 ```
 ### 2. Set Up the Python Environment
 
